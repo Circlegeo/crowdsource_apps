@@ -78,15 +78,8 @@
                       </button>
                     </div>
                     <div v-if="imageUrl.length > 0" class="mt-6 mb-12">
-                      <div class="relative" style="width: 100%; height: 240px">
-                        <div
-                          style="width: 98%; height: 240px"
-                          :style="{
-                            backgroundImage: 'url(' + imageUrl + ')',
-                            backgroundSize: 'contain',
-                            backgroundSize: 'cover',
-                          }"
-                        ></div>
+                      <div class="relative" style="width: 100%;">
+                        <img :src="imageUrl" alt="img"/>
                         <van-button
                           class="
                             absolute
@@ -204,7 +197,7 @@ export default {
           self.imageUrl = "data:image/jpeg;base64," + imageData;
         },
         function () {},
-        { quality: 50, destinationType: Camera.DestinationType.DATA_URL }
+        { quality: 50, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true }
       );
     },
     toDataURL(url, callback) {

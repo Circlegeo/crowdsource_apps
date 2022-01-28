@@ -50,7 +50,7 @@ export default {
     geolocation: {
       handler(val) {
         if (val) {
-          this.map.setView([val.lat, val.lon], this.map.getZoom());
+          this.map.setView([val.lat, val.lon], 12);
           var icon = L.divIcon({
             className: "w-24 h-24 rounded-full bg-blue-800 text-white text-xs",
             html: '<div class="text-xs">' + "</div>",
