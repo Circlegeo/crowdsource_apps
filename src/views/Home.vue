@@ -2,7 +2,7 @@
   <div class="w-96 mx-auto text-center rounded p-4">
     <img :src="imageIcon" class="w-24 mx-auto" />
     <div class="text-center font-bold text-center text-xl mt-2">Circlegeo</div>
-    <div class="mt-5 relative">
+    <div class="mt-2 relative">
       <div class="flex space-x-3 absolute right-0.5 top-0.5 text-xs py-1 px-3 bg-white rounded" style="z-index: 10000">
         <div v-for="(state, i) in $store.state.geolocation" :key="i">
           {{i}}: {{ state.toFixed(2) }}
