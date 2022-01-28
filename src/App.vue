@@ -1,17 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/form">Form</router-link>
+  </div>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  async mounted() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(
+        this.onWeatherWatchSuccess,
+        this.onWeatherError,
+        { enableHighAccuracy: true }
+      );
+    }
+  },
+  methods: {
+    onWeatherWatchSuccess(position) {
+      var updatedLatitude = position.coords.latitude;
+      var updatedLongitude = position.coords.longitude;
+      var accuracy = position.coords.accuracy;
+      this.$store.commit("updategeolocation", {
+        lat: updatedLatitude,
+        lon: updatedLongitude,
+        acc: accuracy,
+      })
+    },
+    onWeatherError() {
+      // alert("error, no location available");
+    },
+  },
+};
 </script>
 
 <style>
@@ -21,6 +42,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #4a42b9;
 }
 </style>

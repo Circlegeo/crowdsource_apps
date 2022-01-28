@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="id.geo.circle" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Apps</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <allow-navigation href="*" />
+        <access allows-arbitrary-loads-in-media="true" allows-arbitrary-loads-in-web-content="true" allows-local-networking="true" origin="*" />
+        <icon density="ldpi"  src="apps_assets/icon.png" />
+        <icon density="mdpi"  src="apps_assets/icon.png"/>
+        <icon density="hdpi"  src="apps_assets/icon.png" />
+        <icon density="xhdpi"   src="apps_assets/icon.png" />
+        <icon density="xxhdpi"   src="apps_assets/icon.png" />
+        <icon density="xxxhdpi"  src="apps_assets/icon.png" />
+    </platform>
+</widget>
