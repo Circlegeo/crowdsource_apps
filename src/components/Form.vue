@@ -104,8 +104,9 @@
                 </div>
               </div>
             </div>
-            <div class="text-xs-center mt-4 mb-4">
+            <div class="text-xs-center mt-4 mb-4 w-full">
               <van-button
+                disabled
                 type="primary"
                 class="px-8 rounded font-semibold"
                 v-if="disable !== true"
